@@ -100,7 +100,7 @@ public class RNFetchBlob extends ReactContextBaseJavaModule {
         try {
             Intent intent= new Intent(Intent.ACTION_VIEW)
                     .setDataAndType(Uri.parse("file://" + path), mime);
-            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK|Intent.FLAG_GRANT_READ_URI_PERMISSION);
             this.getReactApplicationContext().startActivity(intent);
             ActionViewVisible = true;
 
